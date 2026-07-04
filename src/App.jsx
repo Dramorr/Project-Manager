@@ -1,5 +1,5 @@
-import Header from './components/widgets/Header'
-import Footer from './components/widgets/Footer'
+import Header from './shared/components/widgets/Header'
+import Footer from './shared/components/widgets/Footer'
 
 export default function App() {
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/vite.svg';
+import Logo from '../../../assets/vite.svg';
 
 export default function Footer(){
   return (
