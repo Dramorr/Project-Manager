@@ -1,0 +1,46 @@
+@mixin darkMode{
+  --bg-color: #16171d;
+  --text-color: #f3f4f6;
+
+  --border: #2e303a;
+  --code-bg: #1f2028;
+  
+  --accent: #c084fc;
+  --accent-bg: rgba(192, 132, 252, 0.15);
+  --accent-border: rgba(192, 132, 252, 0.5);
+
+  --social-bg: rgba(47, 48, 58, 0.5);
+  --shadow: 0 2px 8px 0 color-mix(in srgb, var(--accent) 25%, transparent),
+  0 4px 16px 0 color-mix(in srgb, var(--accent) 12%, transparent),
+  inset 0 0 4px color-mix(in srgb, var(--accent) 12%, color-mix(in srgb, #000 50%, transparent));
+}
+@mixin lightMode{
+  --bg-color: #fff;
+  --text-color: #333;
+
+  --border: #e5e4e7;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+
+  --accent: #f08c2e;
+  --accent-bg: rgba(240, 140, 46, 0.10);
+  --accent-border: rgba(240, 140, 46, 0.45);
+  
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow: 0 2px 8px 0 color-mix(in srgb, var(--accent) 25%, transparent),
+  0 4px 16px 0 color-mix(in srgb, var(--accent) 12%, transparent),
+  inset 0 0 4px color-mix(in srgb, var(--accent) 12%, color-mix(in srgb, #000 20%, transparent));
+}
+
+:root{
+  // colors
+  // @include lightMode;
+  @include darkMode;
+
+  // fonts
+  --mono: ui-monospace, Consolas, monospace;
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { @include darkMode; }
+}

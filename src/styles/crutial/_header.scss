@@ -1,0 +1,16 @@
+.header{
+  &__inner{
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+  }
+  &__list{ margin: 0 auto; }
+  
+
+  @media(min-width: 969px){
+    &__nav{ display: contents; }
+  }
+  @media(max-width: 968px){}
+}
