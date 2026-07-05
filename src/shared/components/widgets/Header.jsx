@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Logo from '../../../assets/vite.svg';
 
 export default function Header(){
   return (
@@ -7,16 +6,15 @@ export default function Header(){
       <div className="container">
         <div className="header__inner">
           <Link className="header__logo" to="/">
-            <img src={Logo} alt="Site Name" />
+            <img src="./favicon.svg" alt="Site Name" />
           </Link>
 
           <nav className="header__nav">
             <ul className="header__list">
-              <li><Link to="/">Home</Link></li>
+              <li><Link to="/">Projects</Link></li>
+              <li><Link to="/tasks">Tasks</Link></li>
             </ul>
           </nav>
-
-          header
         </div>
       </div>
     </header>
