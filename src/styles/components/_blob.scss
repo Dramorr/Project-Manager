@@ -1,0 +1,17 @@
+.blob{
+  position: absolute;
+
+  width: var(--size, 100px);
+  height: var(--size, 100px);
+  
+  border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+  animation: blob var(--animation-duration, 20s) ease-in-out 0s infinite;
+}
+@keyframes blob {
+  0%, 100%{ border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
+  20% { border-radius: 45% 55% 35% 65% / 60% 30% 70% 40%; }
+  35% { border-radius: 70% 30% 55% 45% / 35% 65% 35% 65%; }
+  50% { border-radius: 30% 70% 40% 60% / 60% 40% 70% 30%; }
+  65% { border-radius: 55% 45% 65% 35% / 45% 70% 30% 55%; }
+  80% { border-radius: 35% 65% 30% 70% / 70% 35% 65% 30%; }
+}

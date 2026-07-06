@@ -1,13 +1,14 @@
-import { Link } from 'react-router-dom';
+import Logo from '../shared/Logo';
+import Socials from '../shared/Socials';
 
 export default function Footer(){
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer__inner">
-          <Link className="footer__logo" to="/">
-            <img src="./favicon.svg" alt="Site Name" />
-          </Link>
+          <Logo className="footer__logo" />
+
+          <Socials />
         </div>
       </div>
     </footer>

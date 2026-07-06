@@ -6,7 +6,8 @@ import { Suspense, lazy } from 'react';
 
 // providers
 import { ProjectsProvider } from './contexts/ProjectsContext';
-import { TasksProvider } from './contexts/TaskContext';
+import { TasksProvider } from './contexts/TasksContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 // pages
 const ProjectsPage = lazy(() => import('./features/projects/pages/ProjectsPage'));
@@ -16,11 +17,15 @@ const ProjectEditPage = lazy(() => import('./features/projects/pages/ProjectEdit
 const TasksPage = lazy(() => import('./features/tasks/pages/TasksPage'));
 const TaskNewPage = lazy(() => import('./features/tasks/pages/TaskNewPage'));
 
-
 export default function App() {
+
+  // localStorage.clear();
+
   return (
     <>
-    <Header />
+    <ThemeProvider>
+      <Header />
+    </ThemeProvider>
     <main className="main">
       <Suspense fallback={<p>lodaing...</p>}>
         <Routes>

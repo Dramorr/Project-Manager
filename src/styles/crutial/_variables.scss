@@ -8,6 +8,7 @@
   --accent: #c084fc;
   --accent-bg: rgba(192, 132, 252, 0.15);
   --accent-border: rgba(192, 132, 252, 0.5);
+  --accent-oposite: #f08c2e;
 
   --social-bg: rgba(47, 48, 58, 0.5);
   --shadow: 0 2px 8px 0 color-mix(in srgb, var(--accent) 25%, transparent),
@@ -19,12 +20,12 @@
   --text-color: #333;
 
   --border: #e5e4e7;
-  --border: #e5e4e7;
   --code-bg: #f4f3ec;
 
   --accent: #f08c2e;
   --accent-bg: rgba(240, 140, 46, 0.10);
   --accent-border: rgba(240, 140, 46, 0.45);
+  --accent-oposite: #c084fc;
   
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow: 0 2px 8px 0 color-mix(in srgb, var(--accent) 25%, transparent),
@@ -34,8 +35,8 @@
 
 :root{
   // colors
-  // @include lightMode;
-  @include darkMode;
+  @include lightMode;
+  --error: color-mix(in srgb, #ff2c2c 65%, transparent);
 
   // fonts
   --mono: ui-monospace, Consolas, monospace;

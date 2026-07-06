@@ -1,0 +1,75 @@
+.select{
+  position: relative;
+  --pt: 24px;
+  --pv: 10px;
+  --ph: 20px;
+  --fz: 18px;
+
+  transition: .3s;
+  &__current{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    border-radius: 8px;
+    padding: var(--pv, 10px) var(--ph, 20px);
+    border: 2px solid var(--accent);
+    background: transparent;
+    outline: none;
+
+    font-size: var(--fz, 16px);
+    font-weight: 400;
+    color: var(--accent);
+
+    transition: inherit;
+    cursor: pointer;
+    &::after{
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+
+      background: var(--accent);
+      mask-image: url('/dropdown-arrow.svg');
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+
+      transition: inherit;
+    }
+  }
+
+  &__options{
+    position: absolute;
+    top: calc(100% + 10px);
+    width: 100%;
+
+    border-radius: 8px;
+    border: 2px solid var(--accent);
+    background: transparent;
+
+    font-size: var(--fz, 16px);
+    font-weight: 400;
+    color: var(--accent);
+
+    backdrop-filter: blur(4px);
+
+    z-index: 10;
+    transition: inherit;
+    & li{
+      padding: var(--pv, 10px) var(--ph, 20px);
+      transition: inherit;
+
+      cursor: pointer;
+      &:hover{
+        background: var(--accent-bg);
+      }
+    }
+  }
+  &:not(.open) &__options{
+    opacity: 0;
+    pointer-events: none;
+  }
+}

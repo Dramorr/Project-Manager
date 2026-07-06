@@ -1,5 +1,11 @@
 .footer{
+  background: var(--border);
+  border-top: 2px solid var(--accent-border);
+
   &__inner{
     padding: 20px 0;
+
+    display: flex;
+    justify-content: space-between;
   }
 }

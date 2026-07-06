@@ -1,4 +1,11 @@
+@use './variables' as *;
+
 *{ box-sizing: border-box; }
+
+html{
+  &.theme-light{ @include lightMode; }
+  &.theme-dark{ @include darkMode; }
+}
 
 html, body{
   width: 100%;
@@ -7,25 +14,24 @@ html, body{
 }
 
 body {
-  font-family: var(--sans);
+  font-family: var(--mono);
 
   background: var(--bg-color);
   color: var(--text-color);
 
   position: relative;
 }
+::selection{
+  color: var(--text-color);
+  background: var(--accent);
+}
+
 #root{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 .main{ flex-grow: 1; }
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 
 .container{
   width: 100%;

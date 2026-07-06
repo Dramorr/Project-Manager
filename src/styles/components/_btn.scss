@@ -1,0 +1,38 @@
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; padding: 16px 32px;
+  width: fit-content;
+
+  outline: none;
+  background: transparent;
+  border: 2px solid var(--accent-border);
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
+
+  transition: .3s;
+  cursor: pointer;
+  &:hover,
+  &:focus{
+    background: var(--accent-bg);
+    box-shadow: var(--shadow);
+    border-color: var(--accent);
+  }
+
+  &[style*="--icon"]::before{
+    content: '';
+    width: 18px;
+    aspect-ratio: 1 / 1;
+
+    background: currentColor;
+    mask-image: var(--icon);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    transition: inherit;
+  }
+}
