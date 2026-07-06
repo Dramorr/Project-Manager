@@ -1,0 +1,42 @@
+@use '../components/blob';
+
+.page-title{
+  overflow: hidden;
+  
+  background: var(--border);
+  border-bottom: 2px solid var(--accent-border);
+
+  margin-bottom: 80px;
+
+  &__inner{
+    position: relative;
+    padding: 100px 0;
+  }
+  &__title{
+    margin: 0 auto;
+    text-align: center;
+
+    font-size: 64px;
+    font-family: var(--mono);
+    color: var(--accent);
+    letter-spacing: .1em;
+  }
+
+  & .blob{
+    background: linear-gradient(var(--accent), var(--accent-oposite));
+    --size: 300px;
+
+    &:nth-child(1){
+      top: 0; left: 0;
+      transform: translate(-50%, -50%) rotate(180deg);
+      filter: blur(6px);
+    }
+    &:nth-child(2){
+      bottom: 0; right: 0;
+      transform: translate(50%, 50%);
+      
+      filter: blur(10px);
+      --animation-duration: 17s;
+    }
+  }
+}

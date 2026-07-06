@@ -1,0 +1,61 @@
+.input-wrapper{
+  position: relative;
+  --pt: 24px;
+  --pv: 10px;
+  --ph: 20px;
+  --fz: 18px;
+
+  &:has(label){ padding-top: var(--pt); }
+  & label{
+    position: absolute;
+    top: calc(var(--pt) + var(--pv));
+    left: var(--ph);
+
+    color: var(--accent-border);
+    font-size: var(--fz);
+    font-weight: 400;
+
+    pointer-events: none;
+    transition: .3s;
+  }
+  &:has(.input:where(:focus, .filled)) label{
+    top: 0;
+    left: 0;
+    font-size: calc(var(--fz) - (var(--fz) / 4));
+
+    color: var(--accent);
+  }
+  &:has(.input.invalid){
+    animation: errorShake .5s ease-in-out 0s 1;
+    & label{
+      color: var(--error);
+    }
+  }
+}
+.input{
+  width: 100%;
+
+  border-radius: 8px;
+  padding: var(--pv, 10px) var(--ph, 20px);
+  border: 2px solid var(--accent-border);
+  background: transparent;
+  outline: none;
+
+  font-size: var(--fz, 16px);
+  font-weight: 400;
+  color: var(--accent);
+
+  transition: .3s;
+  &:is(textarea){
+    resize: none;
+    height: 150px;
+  }
+
+  &:where(:focus, .filled){ border-color: var(--accent); }
+  &.invalid{ border-color: var(--error); }
+}
+@keyframes errorShake {
+  0%, 100%{ transform: translateX(0); }
+  33%{ transform: translateX(-5px); }
+  66%{ transform: translateX(5px); }
+}
