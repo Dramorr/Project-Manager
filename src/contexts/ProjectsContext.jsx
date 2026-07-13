@@ -14,7 +14,7 @@ export function ProjectsProvider(){
   }
   const updateProject = (updatedProject) => {
     if(!updatedProject) return;
-    setProjects(projects.map(item => item.id === updateProject.id ? updateProject : item));
+    setProjects(projects.map(item => item.id === updatedProject.id ? updatedProject : item));
   }
   const removeProject = (project) => {
     if(!project) return;

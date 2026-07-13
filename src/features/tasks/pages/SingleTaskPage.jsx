@@ -11,36 +11,51 @@ import { TasksContext } from "../../../contexts/TasksContext";
 
 export default function TaskNewPage(){
   const { projects } = useContext(ProjectsContext);
-  const { addTask, STATUSES, PRIORITIES } = useContext(TasksContext);
+  const { tasks, addTask, updateTask, STATUSES, PRIORITIES } = useContext(TasksContext);
   const navigate = useNavigate();
 
   const urlParams = useParams();
   const project = projects.find((item) => item.id === urlParams.id);
+  const taskID = urlParams.taskID;
+  const task = tasks.find(task => task.id === taskID);
 
   const name        = useRef(null);
-  const description = useRef(null);
   const status      = useRef(null);
   const priority    = useRef(null);
+  const description = useRef(null);
 
   const handleClick = () => {
-    addTask({
-      id: crypto.randomUUID(),
-      projectId: project.id,
-      title: name.current.value,
-      description: description.current.value,
-      status: status.current.value,
-      priority: priority.current.value,
-      dueDate: 'undefined',
-      createdAt: (new Date()).toLocaleDateString(),
-    });
+    if(task){
+      updateTask({
+        ...task,
+        name: name.current.value,
+        description: description.current.value,
+        status: status.current.value,
+        priority: priority.current.value 
+      });
+    }else{
+      addTask({
+        id: taskID,
+        projectId: project.id,
+        title: name.current.value,
+        description: description.current.value,
+        status: status.current.value,
+        priority: priority.current.value,
+        dueDate: 'undefined',
+        createdAt: (new Date()).toLocaleDateString(),
+      });
+    }
     navigate(`/projects/${project.id}/edit`);
   }
 
   useEffect(() => {
-    status.current.value = STATUSES[0];
-    priority.current.value = PRIORITIES[0];
+    status.current.value = task ? task.status : STATUSES[0];
+    priority.current.value = task ? task.priority : PRIORITIES[0];
+    name.current.value = task ? task.title : '';
+    description.current.value = task ? task.description : '';
   }, []);
 
+  // handle enter button click
   useEffect(() => {
     const handleEnter = (e) => {
       if(e.key === 'Enter') handleClick();
@@ -56,7 +71,7 @@ export default function TaskNewPage(){
       <section className="task-new">
         <div className="container">
           <div className="task-new__inner">
-            <h1 className="task-new__title">New Task!</h1>
+            <h1 className="task-new__title">{task ? task.title : 'New Task!'}</h1>
 
             <div className="task-new__form">
               <div className="task-new__form-col-primary">
@@ -77,21 +92,21 @@ export default function TaskNewPage(){
                   <span>Status:</span>
                   <Select
                     className="task-edit__select task-edit__status"
-                    options={STATUSES}
-                    onChange={(value) => {console.log(value)}}
                     ref={status}
+                    options={STATUSES}
+                    initialValue={task ? task.status : STATUSES[0]}
                   />
                 </div>
                 <div className="task-new__select-wrapper">
                   <span>Priority:</span>
                   <Select
                     className="task-edit__select task-edit__priority"
-                    options={PRIORITIES}
-                    onChange={(value) => {console.log(value)}}
                     ref={priority}
+                    options={PRIORITIES}
+                    initialValue={task ? task.priority : PRIORITIES[0]}
                   />
                 </div>
-                <button className="task-new__btn btn" onClick={handleClick}>Create</button>
+                <button className="task-new__btn btn" onClick={handleClick}>{task ? 'Save' : 'Create'}</button>
               </div>
             </div>
 

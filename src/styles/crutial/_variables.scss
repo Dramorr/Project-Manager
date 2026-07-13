@@ -14,6 +14,12 @@
   --shadow: 0 2px 8px 0 color-mix(in srgb, var(--accent) 25%, transparent),
   0 4px 16px 0 color-mix(in srgb, var(--accent) 12%, transparent),
   inset 0 0 4px color-mix(in srgb, var(--accent) 12%, color-mix(in srgb, #000 50%, transparent));
+
+
+  --ternimal-comment: #6b6480;
+  --ternimal-keyword: #c084fc;
+  --ternimal-string: #86efac;
+  --ternimal-func: #93c5fd;
 }
 @mixin lightMode{
   --bg-color: #fff;
@@ -31,12 +37,20 @@
   --shadow: 0 2px 8px 0 color-mix(in srgb, var(--accent) 25%, transparent),
   0 4px 16px 0 color-mix(in srgb, var(--accent) 12%, transparent),
   inset 0 0 4px color-mix(in srgb, var(--accent) 12%, color-mix(in srgb, #000 20%, transparent));
+
+
+  --ternimal-comment: #93a1a1;
+  --ternimal-keyword: #859900;
+  --ternimal-string: #2aa198;
+  --ternimal-func: #268bd2;
 }
 
 :root{
   // colors
   @include lightMode;
-  --error: color-mix(in srgb, #ff2c2c 65%, transparent);
+  --error: #ff5f56;
+  --warning: #ffbd2e;
+  --success: #27c93f;
 
   // fonts
   --mono: ui-monospace, Consolas, monospace;
