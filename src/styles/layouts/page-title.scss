@@ -39,4 +39,14 @@
       --animation-duration: 17s;
     }
   }
+
+
+  @media(max-width: 768px){
+    &__inner{ padding: 60px 0; }
+    &__title{
+      font-size: 36px;
+      letter-spacing: .05em;
+    }
+    & .blob{ --size: 100px; }
+  }
 }

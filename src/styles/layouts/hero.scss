@@ -1,0 +1,102 @@
+.hero{
+  position: relative;
+  padding: 80px 0;
+  &__inner{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  &__content{
+    width: 100%;
+    max-width: 560px;
+    flex-shrink: 0;
+  }
+  &__title{
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--accent);
+
+    margin-bottom: 12px;
+  }
+  &__subtitle{ font-size: 20px; }
+  &__btn{ margin-top: 32px; }
+
+  &-statistics{
+    margin-top: 48px;
+    &__title{
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    &__items{
+      display: flex;
+      align-items: stretch;
+      gap: 10px;
+    }
+    &__item{
+      padding: 12px;
+      border-radius: 8px;
+      border: 2px solid var(--accent-border);
+
+      flex: 1 0 0;
+      transition: .3s;
+      &-title{
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 6px;
+        letter-spacing: -1px;
+
+        transition: inherit;
+      }
+      &-value{
+        color: var(--accent);
+        font-size: 28px;
+      }
+
+      &:hover{
+        background: var(--accent-bg);
+        box-shadow: var(--shadow);
+        & .hero-statistics__item-title{ color: var(--accent); }
+      }
+    }
+  }
+
+  &__media{
+    width: 100%;
+    flex-grow: 1;
+    align-self: stretch;
+    padding: 0 32px;
+  }
+
+  @media(max-width: 1080px){
+    &__content{ max-width: 400px; }
+  }
+  @media(max-width: 968px){
+    padding: 60px 0;
+    &__inner{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+    &__content{
+      max-width: unset;
+      display: contents;
+    }
+    &__media{ padding: 24px 12px; }
+    &__btn{
+      order: 4;
+      margin: 24px auto 0;
+      max-width: 400px;
+      width: 100%;
+    }
+    &-statistics{
+      width: 100%;
+      order: 5;
+      &__items{
+        flex-wrap: wrap;
+      }
+      &__item-title{ white-space: nowrap;}
+    }
+  }
+}

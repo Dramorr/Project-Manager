@@ -5,6 +5,8 @@ import useLocalStorage from "../shared/hooks/useLocalStorage";
 export const TasksContext = createContext(null);
 export function TasksProvider(){
   const {items: tasks, setItems: setTasks } = useLocalStorage('tasks', []);
+  const STATUSES = ['To Do', 'In Progress', 'Done'];
+  const PRIORITIES = ['Low', 'Medium', 'High'];
 
   const addTask = (newTask) => {
     if(!newTask) return;
@@ -22,7 +24,7 @@ export function TasksProvider(){
   }
 
   return(
-    <TasksContext.Provider value={{tasks, addTask, updateTask, removeTask}}>
+    <TasksContext.Provider value={{tasks, addTask, updateTask, removeTask, STATUSES, PRIORITIES}}>
       <Outlet />
     </TasksContext.Provider>
   )

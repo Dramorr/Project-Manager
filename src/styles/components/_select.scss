@@ -48,7 +48,7 @@
 
     border-radius: 8px;
     border: 2px solid var(--accent);
-    background: transparent;
+    background: color-mix(in srgb, var(--bg-color) 75%, transparent);
 
     font-size: var(--fz, 16px);
     font-weight: 400;

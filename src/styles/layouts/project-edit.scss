@@ -15,10 +15,18 @@
     align-items: stretch;
     gap: 16px;
   }
+
+  &__btns{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    & > *{ flex: 1 0 45%;}
+  }
   &__btn{ width: 100%; }
 
   &__tasks{
     width: 100%;
+
     &-header{
       display: flex;
       align-items: center;
@@ -39,6 +47,19 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+
+      margin-top: 40px;
     }
+  }
+
+  @media(max-width: 968px){
+    &__info{ max-width: 50%; }
+    &__tasks{ flex: 0 0 0; }
+  }
+  @media(max-width: 768px){
+    &__inner{ flex-direction: column; gap: 24px; }
+    &__info{ max-width: unset; display: contents; }
+    &__tasks{ flex: 0 0 0; }
+    &__btns{ order: 5; }
   }
 }

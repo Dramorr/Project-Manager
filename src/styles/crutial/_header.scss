@@ -3,6 +3,7 @@
   z-index: 10;
 
   border-bottom: 2px solid var(--accent-border);
+  &__nav{ display: contents; }
   &__inner{
     padding: 20px 0;
     display: flex;
@@ -29,8 +30,8 @@
   }
   
 
-  @media(min-width: 969px){
-    &__nav{ display: contents; }
-  }
-  @media(max-width: 968px){}
+  // @media(min-width: 969px){
+  //   &__nav{ display: contents; }
+  // }
+  // @media(max-width: 968px){}
 }

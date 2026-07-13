@@ -1,8 +1,12 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import '../../../styles/components/_input.scss';
 
 export default function Input({className, type, value, onChange, ref, placeholder}){
   const [isFilled, setIsFilled] = useState((value && value.length) || false);
+
+  useEffect(() => {
+    if(ref) setIsFilled(!!ref.current.value.length);
+  }, [ref]);
 
   const handleChange = (e) => {
     setIsFilled(!!e.target.value.length);
@@ -11,7 +15,7 @@ export default function Input({className, type, value, onChange, ref, placeholde
 
   return (
     <div className="input-wrapper">
-      <label>{placeholder}</label>
+      {placeholder && <label>{placeholder}</label>}
       { type !== 'textarea' ? 
         <input
           className={`${className} input ${isFilled && 'filled' }`}

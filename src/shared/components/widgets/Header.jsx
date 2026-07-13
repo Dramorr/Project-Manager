@@ -11,8 +11,8 @@ export default function Header(){
 
           <nav className="header__nav">
             <ul className="header__list">
-              <li><Link to="/">Projects</Link></li>
-              <li><Link to="/tasks">Tasks</Link></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/projects">Projects</Link></li>
             </ul>
           </nav>
 

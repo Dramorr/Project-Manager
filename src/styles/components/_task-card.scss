@@ -1,0 +1,90 @@
+.task-card{
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+
+  &__head{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  &__title{
+    color: var(--accent);
+    margin-right: auto;
+
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &__inst-btn{
+    width: 24px;
+    height: 24px;
+
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    
+    background: var(--accent);
+    mask-image: var(--icon);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    opacity: 0.8;
+    transition: .3s;
+    cursor: pointer;
+    &:hover{ opacity: 1; }
+  }
+
+  &__description{
+    font-size: 18px;
+    margin: 6px 0 12px;
+    text-align: justify;
+  }
+
+  &__bottom{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  &__priority,
+  &__status{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    & span{
+      display: block;
+      padding: 4px 8px;
+      border-radius: 100px;
+
+      font-size: 14px;
+      font-weight: 400;
+    }
+    &[data-priority="Low"] span,
+    &[data-status="Done"] span{
+      background: var(--success); color: var(--bg-color);
+    }
+    &[data-priority="Medium"] span,
+    &[data-status="In Progress"] span{
+      background: var(--warning); color: var(--bg-color);
+    }
+    &[data-priority="High"] span,
+    &[data-status="To Do"] span{
+      background: var(--error); color: var(--bg-color);
+    }
+  }
+  &__createdAt{
+    margin-left: auto;
+  }
+
+  @media(max-width: 500px){
+    &__bottom{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__createdAt{ margin-left: 0; }
+  }
+}

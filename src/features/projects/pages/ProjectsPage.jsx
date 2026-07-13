@@ -19,7 +19,7 @@ export default function ProjectsPage(){
           <div className="projects__inner">
             { projects.length > 0 ?
               <div className="projects__items">
-                {projects.map((project, i) => (
+                {projects.map((project) => (
                   <ProjectCard key={project.id} project={project}/>
                 ))}
               </div> 
