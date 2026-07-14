@@ -38,7 +38,8 @@
   border-radius: 8px;
   padding: var(--pv, 10px) var(--ph, 20px);
   border: 2px solid var(--accent-border);
-  background: transparent;
+  // background: transparent;
+  background: var(--code-bg);
   outline: none;
 
   font-size: var(--fz, 16px);

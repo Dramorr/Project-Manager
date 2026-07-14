@@ -3,6 +3,7 @@
 
   padding: 18px;
   border: 2px solid var(--accent-border);
+  background: var(--code-bg);
   border-radius: 8px;
 
   display: flex;
@@ -20,6 +21,7 @@
     overflow: hidden;
 
     width: 100%;
+    padding-right: 25px;
   }
   &__description{
     width: 100%;
@@ -71,8 +73,26 @@
     background: linear-gradient(90deg, var(--accent) var(--progress, 100%), var(--code-bg) var(--progress, 100%));
   }
 
-  &:hover{
-    background: var(--accent-bg);
-    box-shadow: var(--shadow);
+  &__favorite-toggle{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 19px; right: 10px;
+    background: transparent;
+    border: none; outline: none;
+    padding: 0; margin: 0;
+
+    & svg{
+      fill: transparent;
+      stroke: var(--accent);
+      transition: .3s;
+      cursor: pointer;
+    }
+    &:hover svg{
+      fill: color-mix(in srgb, var(--accent) 25%, transparent);
+    }
   }
+  &--favorite &__favorite-toggle svg{ fill: var(--accent); }
+
+  &:hover{ box-shadow: var(--shadow); }
 }

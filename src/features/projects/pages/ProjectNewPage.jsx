@@ -36,6 +36,7 @@ export default function ProjectNewPage(){
       description: description.current.value,
       createdAt: (new Date()).toLocaleDateString(),
       status: 'Active',
+      favorite: false,
     });
     navigate(`/projects/${id}/edit`);
   }

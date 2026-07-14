@@ -1,6 +1,6 @@
 .hero{
   position: relative;
-  padding: 80px 0;
+  margin: 80px 0;
   &__inner{
     display: flex;
     align-items: center;
@@ -38,6 +38,7 @@
       padding: 12px;
       border-radius: 8px;
       border: 2px solid var(--accent-border);
+      background: var(--code-bg);
 
       flex: 1 0 0;
       transition: .3s;
@@ -55,7 +56,6 @@
       }
 
       &:hover{
-        background: var(--accent-bg);
         box-shadow: var(--shadow);
         & .hero-statistics__item-title{ color: var(--accent); }
       }
@@ -73,7 +73,7 @@
     &__content{ max-width: 400px; }
   }
   @media(max-width: 968px){
-    padding: 60px 0;
+    margin: 60px 0;
     &__inner{
       flex-direction: column;
       align-items: flex-start;

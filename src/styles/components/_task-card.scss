@@ -3,7 +3,9 @@
   padding: 12px 16px;
   border-radius: 8px;
   border: 2px solid var(--accent);
+  background: var(--code-bg);
 
+  transition: .3s;
   &__head{
     display: flex;
     align-items: center;
@@ -31,7 +33,7 @@
     mask-position: center;
     mask-size: contain;
 
-    opacity: 0.8;
+    opacity: 0.6;
     transition: .3s;
     cursor: pointer;
     &:hover{ opacity: 1; }
@@ -79,6 +81,8 @@
   &__createdAt{
     margin-left: auto;
   }
+
+  &:hover{ box-shadow: var(--shadow); }
 
   @media(max-width: 500px){
     &__bottom{

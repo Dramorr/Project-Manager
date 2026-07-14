@@ -64,6 +64,7 @@ export default function ProjectEditPage(){
       <PageTitle title={project.name} />
       <section className="project-edit">
         <div className="container">
+          <button className="project-edit__back-btn btn" onClick={() => navigate('/projects/')}>Back To Projects</button>
           <div className="project-edit__inner">
             <div className="project-edit__info">
               <Input

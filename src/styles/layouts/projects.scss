@@ -29,14 +29,22 @@
 
     color: var(--accent);
 
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 135%;
+  }
+  &__title{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: capitalize;
+    color: var(--accent);
   }
 
   @media(max-width: 1080px){
     &__items{ --cols: 2; }
   }
+  @media(max-width: 968px){ margin: 60px 0; }
   @media(max-width: 600px){
     &__items{ --cols: 1; }
   }

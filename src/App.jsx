@@ -17,7 +17,6 @@ const ProjectNewPage = lazy(() => import('./features/projects/pages/ProjectNewPa
 const ProjectEditPage = lazy(() => import('./features/projects/pages/ProjectEditPage'));
 
 const TasksPage = lazy(() => import('./features/tasks/pages/TasksPage'));
-const TaskNewPage = lazy(() => import('./features/tasks/pages/TaskNewPage'));
 const SingleTaskPage = lazy(() => import('./features/tasks/pages/SingleTaskPage'));
 
 export default function App() {
@@ -45,7 +44,6 @@ export default function App() {
                 <Route path="/projects" element={<ProjectsPage/>} />
                 <Route path="/projects/:id/edit" element={<ProjectEditPage />} />
                 <Route path="/projects/:id/tasks" element={<TasksPage/>} />
-                <Route path="/projects/:id/tasks/new" element={<TaskNewPage />} />
                 <Route path="/projects/:id/tasks/:taskID" element={<SingleTaskPage />} />
               </Route>
             </Route>
