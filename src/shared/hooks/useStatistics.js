@@ -6,7 +6,7 @@ export default function useStatistics(){
   const { projects } = useContext(ProjectsContext);
   const { tasks } = useContext(TasksContext);
 
-  const activeProjects = projects.filter((project) => project.status === 'active');
+  const activeProjects = projects.filter((project) => project.status.toLowerCase() === 'active');
   const activeTasks = tasks.filter((task) => task.status === 'To Do' || task.status === 'In Progress');
   const completedTasks = tasks.filter((task) => task.status === 'Done');
 

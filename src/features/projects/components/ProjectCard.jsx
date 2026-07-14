@@ -11,7 +11,7 @@ export default function ProjectCard({project}){
     const unfinishedTasks = currentTasks.filter(task => task.status !== 'Done');
     
     if(unfinishedTasks.length){
-      return `${(100 / currentTasks.length) * unfinishedTasks.length}%`;
+      return `${(100 / currentTasks.length) * (currentTasks.length - unfinishedTasks.length)}%`;
     }else return '100%';
   }
 
